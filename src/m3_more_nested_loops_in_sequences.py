@@ -46,6 +46,11 @@ def run_test_largest_number():
 
     # TODO 2 (continued): Add your ADDITIONAL test(s) here:
 
+    # Test 4:
+    expected = 99
+    answer = largest_number([(0, 0, 0), (23, -200, 23, 3, 98), [0, 99, 23, 4]])
+    print('Expected and actual are:', expected, answer)
+
 
 def largest_number(seq_seq):
     """
