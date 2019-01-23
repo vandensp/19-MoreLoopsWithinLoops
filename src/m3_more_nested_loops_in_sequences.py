@@ -18,7 +18,7 @@ def main():
 def run_test_largest_number():
     """ Tests the    largest_number    function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done: 2. Implement this TEST function.
     #   It TESTS the  largest_number  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # -------------------------------------------------------------------------
@@ -44,11 +44,16 @@ def run_test_largest_number():
     answer = largest_number(([], [], []))
     print('Expected and actual are:', expected, answer)
 
-    # TODO 2 (continued): Add your ADDITIONAL test(s) here:
+    # Done 2 (continued): Add your ADDITIONAL test(s) here:
 
     # Test 4:
     expected = 99
     answer = largest_number([(0, 0, 0), (23, -200, 23, 3, 98), [0, 99, 23, 4]])
+    print('Expected and actual are:', expected, answer)
+
+    # Test 5:
+    expected = 0
+    answer = largest_number([(0, 0, 0), (-23, -200, -2, -3, -98), [0, -99, -23, -4]])
     print('Expected and actual are:', expected, answer)
 
 
@@ -78,9 +83,23 @@ def largest_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
+    largest = None
+    for k in range (len(seq_seq)):
+        sub = seq_seq[k]
+        for j in range (len(sub)):
+            if sub[j] != None:
+                largest = sub[j]
+                break
+
+    for k in range (len(seq_seq)):
+        sub = seq_seq[k]
+        for j in range (len(sub)):
+            if largest < sub[j]:
+                largest = sub[j]
+    return largest
 
 
 def run_test_largest_negative_number():
